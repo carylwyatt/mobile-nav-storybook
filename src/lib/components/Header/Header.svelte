@@ -29,6 +29,6 @@
 
 <style>
     svg {
-        @apply text-ht-neutral-900 m-auto h-4;
+        @apply text-ht-neutral-800 m-auto h-4;
     }
 </style>
