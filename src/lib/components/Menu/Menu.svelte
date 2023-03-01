@@ -1,4 +1,5 @@
 <script lang="ts">
+    import menuData from '../../../assets/menuData.json';
     let dropdownOpen = false;
 
 </script>
@@ -12,24 +13,37 @@
             </button>
             <div class="py-4 bg-ht-neutral-50 {dropdownOpen ? 'block' : 'hidden'}">
                 <ul class="px-4 pt-2 space-y-6">
-                   <li>Welcome to HathiTrust</li>
-                   <li>Our Mission & History</li>
-                   <li>HathiTrust Research Center (HTRC)</li>
-                   <li>Our Team</li> 
+                   {#each menuData.about as linkText}
+                   <li>{linkText}</li>
+                   {/each}
                 </ul>
             </div>
         </li>
         <li class="flex flex-col">
-            <button class="flex flex-row justify-between items-center w-full p-4 font-bold">
+            <button  on:click={() => dropdownOpen = !dropdownOpen} on:keyup={() => dropdownOpen = !dropdownOpen} class="flex flex-row justify-between items-center w-full p-4 font-bold">
                 <span>The Collection</span>
                 <svg class="h-1" id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7.5 4.5"> <g id="Layer_1-2" data-name="Layer 1"> <path d="m3.22,4.28L.22,1.28C0,1.07-.06.75.06.47.18.19.45,0,.75,0h6c.3,0,.58.18.69.46s.05.6-.16.82l-3,3c-.29.29-.77.29-1.06,0h0Z"/> </g> </svg>
             </button>
+            <div class="py-4 bg-ht-neutral-50 {dropdownOpen ? 'block' : 'hidden'}">
+                <ul class="px-4 pt-2 space-y-6">
+                   {#each menuData.collection as linkText}
+                   <li>{linkText}</li>
+                   {/each}
+                </ul>
+            </div>
         </li>
         <li class="flex flex-col">
-            <button class="flex flex-row justify-between items-center w-full p-4 font-bold">
+            <button  on:click={() => dropdownOpen = !dropdownOpen} on:keyup={() => dropdownOpen = !dropdownOpen} class="flex flex-row justify-between items-center w-full p-4 font-bold">
                 <span>Member Libraries</span>
                 <svg class="h-1" id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7.5 4.5"> <g id="Layer_1-2" data-name="Layer 1"> <path d="m3.22,4.28L.22,1.28C0,1.07-.06.75.06.47.18.19.45,0,.75,0h6c.3,0,.58.18.69.46s.05.6-.16.82l-3,3c-.29.29-.77.29-1.06,0h0Z"/> </g> </svg>
             </button>
+            <div class="py-4 bg-ht-neutral-50 {dropdownOpen ? 'block' : 'hidden'}">
+                <ul class="px-4 pt-2 space-y-6">
+                   {#each menuData.memberLibraries as linkText}
+                   <li>{linkText}</li>
+                   {/each}
+                </ul>
+            </div>
         </li>
         <li class="flex flex-col">
              <div class="flex flex-row justify-between items-center w-full p-4 font-bold">
@@ -37,10 +51,17 @@
             </div>
         </li>
        <li class="flex flex-col">
-            <button class="flex flex-row justify-between items-center w-full p-4 font-bold">
+            <button  on:click={() => dropdownOpen = !dropdownOpen} on:keyup={() => dropdownOpen = !dropdownOpen} class="flex flex-row justify-between items-center w-full p-4 font-bold">
                 <span>News &amp; Events</span>
                 <svg class="h-1" id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7.5 4.5"> <g id="Layer_1-2" data-name="Layer 1"> <path d="m3.22,4.28L.22,1.28C0,1.07-.06.75.06.47.18.19.45,0,.75,0h6c.3,0,.58.18.69.46s.05.6-.16.82l-3,3c-.29.29-.77.29-1.06,0h0Z"/> </g> </svg>
             </button>
+            <div class="py-4 bg-ht-neutral-50 {dropdownOpen ? 'block' : 'hidden'}">
+                <ul class="px-4 pt-2 space-y-6">
+                   {#each menuData.newsEvents as linkText}
+                   <li>{linkText}</li>
+                   {/each}
+                </ul>
+            </div>
         </li>
         <li class="flex flex-col bg-ht-neutral-50 border-t border-ht-neutral-200">
             <div class="flex flex-row justify-between items-center w-full p-4 font-bold">
