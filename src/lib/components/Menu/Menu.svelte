@@ -1,17 +1,17 @@
 <script lang="ts">
     import menuData from '../../../assets/menuData.json';
-    let dropdownOpen = false;
+    let dropdownActive = {about: false, collection: false, libraries: false, news: false};
 
 </script>
 
 <nav>
     <ul>
         <li class="flex flex-col">
-            <button on:click={() => dropdownOpen = !dropdownOpen} on:keyup={() => dropdownOpen = !dropdownOpen} class="flex flex-row justify-between items-center w-full p-4 font-bold">
+            <button on:click={() => dropdownActive.about = !dropdownActive.about} on:keyup={() => dropdownActive.about = !dropdownActive.about} class="flex flex-row justify-between items-center w-full p-4 font-bold">
                 <span>About </span>
                 <svg class="h-1" id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7.5 4.5"> )<g id="Layer_1-2" data-name="Layer 1"> <path d="m3.22,4.28L.22,1.28C0,1.07-.06.75.06.47.18.19.45,0,.75,0h6c.3,0,.58.18.69.46s.05.6-.16.82l-3,3c-.29.29-.77.29-1.06,0h0Z"/> </g> </svg>
             </button>
-            <div class="py-4 bg-ht-neutral-50 {dropdownOpen ? 'block' : 'hidden'}">
+            <div class="py-4 bg-ht-neutral-50 {dropdownActive.about ? 'block' : 'hidden'}">
                 <ul class="px-4 pt-2 space-y-6">
                    {#each menuData.about as linkText}
                    <li>{linkText}</li>
@@ -20,11 +20,11 @@
             </div>
         </li>
         <li class="flex flex-col">
-            <button  on:click={() => dropdownOpen = !dropdownOpen} on:keyup={() => dropdownOpen = !dropdownOpen} class="flex flex-row justify-between items-center w-full p-4 font-bold">
+            <button  on:click={() => dropdownActive.collection = !dropdownActive.collection} on:keyup={() => dropdownActive.collection = !dropdownActive.collection} class="flex flex-row justify-between items-center w-full p-4 font-bold">
                 <span>The Collection</span>
                 <svg class="h-1" id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7.5 4.5"> <g id="Layer_1-2" data-name="Layer 1"> <path d="m3.22,4.28L.22,1.28C0,1.07-.06.75.06.47.18.19.45,0,.75,0h6c.3,0,.58.18.69.46s.05.6-.16.82l-3,3c-.29.29-.77.29-1.06,0h0Z"/> </g> </svg>
             </button>
-            <div class="py-4 bg-ht-neutral-50 {dropdownOpen ? 'block' : 'hidden'}">
+            <div class="py-4 bg-ht-neutral-50 {dropdownActive.collection ? 'block' : 'hidden'}">
                 <ul class="px-4 pt-2 space-y-6">
                    {#each menuData.collection as linkText}
                    <li>{linkText}</li>
@@ -33,11 +33,11 @@
             </div>
         </li>
         <li class="flex flex-col">
-            <button  on:click={() => dropdownOpen = !dropdownOpen} on:keyup={() => dropdownOpen = !dropdownOpen} class="flex flex-row justify-between items-center w-full p-4 font-bold">
+            <button  on:click={() => dropdownActive.libraries = !dropdownActive.libraries} on:keyup={() => dropdownActive.libraries = !dropdownActive.libraries} class="flex flex-row justify-between items-center w-full p-4 font-bold">
                 <span>Member Libraries</span>
                 <svg class="h-1" id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7.5 4.5"> <g id="Layer_1-2" data-name="Layer 1"> <path d="m3.22,4.28L.22,1.28C0,1.07-.06.75.06.47.18.19.45,0,.75,0h6c.3,0,.58.18.69.46s.05.6-.16.82l-3,3c-.29.29-.77.29-1.06,0h0Z"/> </g> </svg>
             </button>
-            <div class="py-4 bg-ht-neutral-50 {dropdownOpen ? 'block' : 'hidden'}">
+            <div class="py-4 bg-ht-neutral-50 {dropdownActive.libraries ? 'block' : 'hidden'}">
                 <ul class="px-4 pt-2 space-y-6">
                    {#each menuData.memberLibraries as linkText}
                    <li>{linkText}</li>
@@ -51,11 +51,11 @@
             </div>
         </li>
        <li class="flex flex-col">
-            <button  on:click={() => dropdownOpen = !dropdownOpen} on:keyup={() => dropdownOpen = !dropdownOpen} class="flex flex-row justify-between items-center w-full p-4 font-bold">
+            <button  on:click={() => dropdownActive.news = !dropdownActive.news} on:keyup={() => dropdownActive.news = !dropdownActive.news} class="flex flex-row justify-between items-center w-full p-4 font-bold">
                 <span>News &amp; Events</span>
                 <svg class="h-1" id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7.5 4.5"> <g id="Layer_1-2" data-name="Layer 1"> <path d="m3.22,4.28L.22,1.28C0,1.07-.06.75.06.47.18.19.45,0,.75,0h6c.3,0,.58.18.69.46s.05.6-.16.82l-3,3c-.29.29-.77.29-1.06,0h0Z"/> </g> </svg>
             </button>
-            <div class="py-4 bg-ht-neutral-50 {dropdownOpen ? 'block' : 'hidden'}">
+            <div class="py-4 bg-ht-neutral-50 {dropdownActive.news ? 'block' : 'hidden'}">
                 <ul class="px-4 pt-2 space-y-6">
                    {#each menuData.newsEvents as linkText}
                    <li>{linkText}</li>
